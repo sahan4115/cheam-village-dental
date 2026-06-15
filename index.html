@@ -398,6 +398,85 @@ header.on-dark .burger span{background:var(--porcelain)}
 .step h3{font-family:var(--serif);font-weight:400;font-size:26px;margin-top:auto}
 .step p{font-size:14px;line-height:1.85;color:var(--ink-soft)}
 
+/* ============ SMILE GALLERY (image trail) ============ */
+.gallery{
+  position:relative;background:var(--ink);color:var(--porcelain);
+  min-height:100svh;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;isolation:isolate;
+}
+.gallery::before{ /* faint vignette + sage glow */
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 40%, rgba(105,119,95,.16), transparent 60%);
+}
+.gallery-stage{position:relative;z-index:1;width:100%;height:100svh;display:grid;place-items:center;cursor:none}
+.gallery-top{
+  position:absolute;top:clamp(28px,6vh,64px);left:0;right:0;
+  display:flex;justify-content:space-between;align-items:center;
+  width:min(1380px,calc(100% - clamp(40px,7vw,128px)));margin-inline:auto;
+}
+.gallery-top .eyebrow{color:var(--sage-soft)}
+.gal-hint{
+  font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;opacity:.6;
+  display:flex;align-items:center;gap:11px;
+}
+.gal-hint-dot{width:7px;height:7px;border-radius:50%;background:var(--sage-soft);animation:hintPulse 1.8s ease-in-out infinite}
+@keyframes hintPulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.25)}}
+.gal-word{position:relative;z-index:3;text-align:center;pointer-events:none;padding:0 18px;mix-blend-mode:difference}
+.gal-pos{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(15px,2vw,24px);opacity:.85;margin-bottom:clamp(8px,1.4vh,16px)}
+.gal-phon{letter-spacing:.04em;opacity:.65;font-size:.82em}
+.gal-term{
+  font-family:var(--serif);font-weight:300;line-height:.96;letter-spacing:-.02em;
+  font-size:clamp(58px,13vw,200px);
+}
+.gal-term span{color:var(--sage-soft);font-style:italic;padding:0 .04em}
+.gal-sub{
+  margin-top:clamp(18px,3vh,34px);font-size:clamp(13px,1.3vw,15.5px);letter-spacing:.02em;
+  opacity:.72;max-width:34ch;margin-inline:auto;line-height:1.7;
+}
+/* custom cursor dot inside stage */
+.gal-cursor{
+  position:fixed;top:0;left:0;width:54px;height:54px;border:1px solid rgba(246,243,237,.55);border-radius:50%;
+  pointer-events:none;z-index:40;mix-blend-mode:difference;
+  display:grid;place-items:center;font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  opacity:0;transition:opacity .3s,width .3s,height .3s;will-change:transform;
+}
+.gal-cursor.show{opacity:1}
+/* before / after trail card */
+.ba-card{
+  position:absolute;top:0;left:0;width:clamp(160px,16vw,236px);aspect-ratio:3/3.7;
+  border-radius:10px;overflow:hidden;pointer-events:none;will-change:transform,opacity;z-index:2;
+  box-shadow:0 30px 60px -24px rgba(0,0,0,.7);background:#0d0b0a;
+}
+.ba-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-before{position:absolute;inset:0;width:50%;overflow:hidden;border-right:1.5px solid var(--sage-soft)}
+.ba-before img{width:200%;max-width:none;filter:grayscale(1) brightness(.72) contrast(1.05)}
+.ba-tag{
+  position:absolute;z-index:2;font-size:8px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+  color:var(--porcelain);background:rgba(23,20,17,.55);padding:4px 7px;border-radius:3px;backdrop-filter:blur(3px);
+}
+.ba-tag-b{top:9px;left:9px}
+.ba-tag-a{bottom:9px;right:9px;background:rgba(105,119,95,.78)}
+/* static fallback grid */
+.gal-grid{display:none}
+.gallery.static .gallery-stage{cursor:default}
+.gallery.static .gal-cursor{display:none}
+.gallery.static{min-height:0;display:block;padding:clamp(80px,11vh,150px) 0 clamp(90px,12vh,160px)}
+.gallery.static .gallery-stage{height:auto;position:static;display:block}
+.gallery.static .gallery-top{position:static;width:min(1380px,calc(100% - clamp(40px,7vw,128px)));margin-bottom:clamp(40px,7vh,80px)}
+.gallery.static .gal-word{margin-bottom:clamp(48px,8vh,90px);mix-blend-mode:normal}
+.gallery.static .gal-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);
+  width:min(1380px,calc(100% - clamp(40px,7vw,128px)));margin-inline:auto;
+}
+.gallery.static .ba-card{
+  position:relative;width:100%;aspect-ratio:3/3.7;box-shadow:0 24px 50px -30px rgba(0,0,0,.8);
+  opacity:1!important;transform:none!important;
+}
+@media(max-width:760px){
+  .gallery.static .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-top{flex-direction:column;align-items:flex-start;gap:14px}
+}
+
 /* ============ TESTIMONIALS ============ */
 .voices{padding:0 0 clamp(120px,16vh,200px)}
 .voices-inner{
@@ -531,6 +610,7 @@ footer{border-top:1px solid var(--line-light);background:var(--ink);color:var(--
       <a href="#studio">Studio</a>
       <a href="#treatments">Treatments</a>
       <a href="#approach">Approach</a>
+      <a href="#gallery">Gallery</a>
       <a href="#voices">Patients</a>
       <a href="#visit">Visit</a>
     </nav>
@@ -547,8 +627,9 @@ footer{border-top:1px solid var(--line-light);background:var(--ink);color:var(--
     <a class="menu-link" href="#studio"><i>01</i>Studio</a>
     <a class="menu-link" href="#treatments"><i>02</i>Treatments</a>
     <a class="menu-link" href="#approach"><i>03</i>Approach</a>
-    <a class="menu-link" href="#voices"><i>04</i>Patients</a>
-    <a class="menu-link" href="#visit"><i>05</i>Visit us</a>
+    <a class="menu-link" href="#gallery"><i>04</i>Gallery</a>
+    <a class="menu-link" href="#voices"><i>05</i>Patients</a>
+    <a class="menu-link" href="#visit"><i>06</i>Visit us</a>
   </nav>
   <div class="menu-foot">
     The Broadway · Cheam Village · Surrey<br>
@@ -799,6 +880,22 @@ footer{border-top:1px solid var(--line-light);background:var(--ink);color:var(--
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ============ SMILE GALLERY (image trail) ============ -->
+  <section class="gallery" id="gallery" aria-label="Smile gallery — before and after">
+    <div class="gallery-stage" id="galStage">
+      <div class="gallery-top">
+        <p class="eyebrow">Smile gallery</p>
+        <p class="gal-hint" id="galHint"><span class="gal-hint-dot"></span>Move your cursor across the word</p>
+      </div>
+      <div class="gal-word" data-fade>
+        <p class="gal-pos">n. &nbsp;<span class="gal-phon">\&nbsp;ˌkän-fə-ˈdens&nbsp;\</span></p>
+        <h2 class="gal-term">con<span>·</span>fi<span>·</span>dence</h2>
+        <p class="gal-sub">Before, and after — real smiles, quietly transformed in the studio.</p>
+      </div>
+    </div>
+    <div class="gal-grid" id="galGrid" aria-hidden="true"></div>
   </section>
 
   <!-- ============ TESTIMONIALS ============ -->
@@ -1283,6 +1380,76 @@ footer{border-top:1px solid var(--line-light);background:var(--ink);color:var(--
       });
     });
   }
+
+  /* ---------- smile gallery image trail ---------- */
+  (function(){
+    var gallery=document.getElementById('gallery'); if(!gallery) return;
+    var stage=document.getElementById('galStage');
+    var pool=[
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
+      'https://images.unsplash.com/photo-1545167622-3a6ac756afa4',
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9',
+      'https://images.unsplash.com/photo-1531123897727-8f129e1688ce'
+    ];
+    function url(base,w){ return base+'?q=80&w='+w+'&h='+Math.round(w*1.23)+'&fit=crop&crop=faces&auto=format'; }
+    function buildCard(base){
+      var fig=document.createElement('figure'); fig.className='ba-card';
+      var after=document.createElement('img'); after.src=url(base,420); after.alt=''; after.loading='lazy';
+      var before=document.createElement('span'); before.className='ba-before';
+      var bimg=document.createElement('img'); bimg.src=url(base,420); bimg.alt=''; bimg.loading='lazy';
+      before.appendChild(bimg);
+      var tb=document.createElement('span'); tb.className='ba-tag ba-tag-b'; tb.textContent='Before';
+      var ta=document.createElement('span'); ta.className='ba-tag ba-tag-a'; ta.textContent='After';
+      fig.appendChild(after); fig.appendChild(before); fig.appendChild(tb); fig.appendChild(ta);
+      return fig;
+    }
+    var canTrail = window.matchMedia('(hover:hover) and (pointer:fine)').matches && !reduced;
+    if(!canTrail){
+      /* static grid fallback (touch / reduced-motion) */
+      gallery.classList.add('static');
+      var grid=document.getElementById('galGrid');
+      for(var i=0;i<6;i++) grid.appendChild(buildCard(pool[i%pool.length]));
+      grid.setAttribute('aria-hidden','false');
+      return;
+    }
+    /* preload */
+    pool.forEach(function(b){ var im=new Image(); im.src=url(b,420); });
+
+    /* custom cursor */
+    var cur=document.createElement('div'); cur.className='gal-cursor'; cur.textContent='drag through'; gallery.appendChild(cur);
+    gsap.set(cur,{xPercent:-50,yPercent:-50});
+    var cx=gsap.quickTo(cur,'x',{duration:.25,ease:'power3'}), cy=gsap.quickTo(cur,'y',{duration:.25,ease:'power3'});
+
+    var lastX=0,lastY=0,primed=false,poolIdx=0,live=[],MAX=6,GAP=95;
+    function spawn(x,y){
+      var card=buildCard(pool[poolIdx%pool.length]); poolIdx++;
+      stage.appendChild(card); live.push(card);
+      var rect=card.getBoundingClientRect?{w:0}:{}; // noop guard
+      var w=card.offsetWidth||200, h=card.offsetHeight||246;
+      var rot=gsap.utils.random(-13,13);
+      gsap.set(card,{x:x-w/2,y:y-h/2,rotation:rot,scale:.55,opacity:0});
+      gsap.timeline()
+        .to(card,{scale:1,opacity:1,duration:.5,ease:'power3.out'})
+        .to(card,{y:'-='+gsap.utils.random(26,60),duration:1.5,ease:'power1.out'},0)
+        .to(card,{opacity:0,scale:.92,duration:.5,ease:'power2.in'},1.0)
+        .add(function(){ card.remove(); var k=live.indexOf(card); if(k>-1) live.splice(k,1); });
+      if(live.length>MAX){ var old=live.shift(); gsap.to(old,{opacity:0,duration:.3,onComplete:function(){old.remove();}}); }
+    }
+    stage.addEventListener('pointermove',function(e){
+      cx(e.clientX); cy(e.clientY);
+      if(!primed){ lastX=e.clientX; lastY=e.clientY; primed=true; cur.classList.add('show'); return; }
+      var dx=e.clientX-lastX, dy=e.clientY-lastY;
+      if(Math.hypot(dx,dy)>GAP){ spawn(e.clientX,e.clientY); lastX=e.clientX; lastY=e.clientY; }
+    });
+    stage.addEventListener('pointerenter',function(){ cur.classList.add('show'); });
+    stage.addEventListener('pointerleave',function(){ cur.classList.remove('show'); primed=false; });
+    /* tap support (fine-pointer hybrids) */
+    stage.addEventListener('pointerdown',function(e){ spawn(e.clientX,e.clientY); });
+  })();
 
   /* ---------- testimonial rotator ---------- */
   var quotes=document.querySelectorAll('#quoteStage .quote');
