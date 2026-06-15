@@ -359,13 +359,13 @@ header.on-dark .burger span{background:var(--porcelain)}
 }
 .wtick.major{height:42px;background:rgba(23,20,17,.28)}
 .wtick.fill{background:var(--sage)}
-.wcard{position:absolute;left:0;top:0;pointer-events:auto;cursor:pointer}
+.wcard{position:absolute;left:50%;top:0;pointer-events:auto;cursor:pointer;transform-origin:top center;will-change:transform}
 .wcard-in{
-  width:min(340px,66vw);text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;
-  opacity:.28;transform:scale(.88);transition:opacity .5s var(--ease),transform .5s var(--ease);
+  width:min(340px,72vw);text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;
+  opacity:.26;transition:opacity .45s var(--ease);
 }
 .wcard.on{cursor:default}
-.wcard.on .wcard-in{opacity:1;transform:scale(1)}
+.wcard.on .wcard-in{opacity:1}
 .wno{
   font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(52px,6vw,84px);line-height:1;
   color:transparent;-webkit-text-stroke:1px var(--ink);transition:color .4s,-webkit-text-stroke .4s;
@@ -1317,14 +1317,21 @@ footer{border-top:1px solid var(--line-light);background:var(--ink);color:var(--
       tk.className='wtick'+(tickEls.length%5===0?' major':'');
       wticksWrap.appendChild(tk); tickEls.push(tk); tickAngles.push(ta);
     }
-    var R, Rtick, stepDeg, rot={r:0}, wActive=0;
+    /* cards ride a level horizontal track (upright, equal heights); only the
+       tick gauge rotates as the dial */
+    wcards.forEach(function(c){ wheelStage.appendChild(c); });
+    var R, Rtick, stepDeg, cardSpacing, cardY, rot={r:0}, wActive=-1;
     function applyWheel(){
       wheelEl.style.transform = 'rotate('+rot.r+'deg)';
-      var act = Math.max(0, Math.min(wcards.length-1, Math.round(-rot.r/stepDeg)));
-      if(act!==wActive){
-        wActive=act; wNum.textContent='0'+(act+1);
-        wcards.forEach(function(c,i){ c.classList.toggle('on', i===act); });
-      }
+      var prog = -rot.r/stepDeg;                       /* 0 .. n-1 */
+      var act = Math.max(0, Math.min(wcards.length-1, Math.round(prog)));
+      if(act!==wActive){ wActive=act; wNum.textContent='0'+(act+1); }
+      wcards.forEach(function(c,i){
+        var d = i - prog, ad = Math.abs(d);
+        var s = Math.max(0.74, 1 - ad*0.2);
+        c.style.transform = 'translate(-50%,0) translateX('+(d*cardSpacing)+'px) scale('+s+')';
+        c.classList.toggle('on', i===act);
+      });
       tickEls.forEach(function(t,i){ t.classList.toggle('fill', tickAngles[i]+rot.r <= 0.01); });
     }
     function wheelLayout(){
@@ -1332,13 +1339,13 @@ footer{border-top:1px solid var(--line-light);background:var(--ink);color:var(--
       R = mob ? Math.max(560, innerWidth*1.45) : Math.min(1100, Math.max(820, innerWidth*0.78));
       Rtick = R - (mob?115:140);
       stepDeg = mob ? 30 : 21;
+      cardSpacing = mob ? wheelStage.offsetWidth*0.86 : Math.min(540, wheelStage.offsetWidth*0.42);
+      cardY = Math.round(wheelStage.offsetHeight*0.05);
       wheelEl.style.top = (wheelStage.offsetHeight*0.44 + R) + 'px';
       tickEls.forEach(function(t,i){
         t.style.transform = 'rotate('+tickAngles[i]+'deg) translateY('+(-Rtick)+'px)';
       });
-      wcards.forEach(function(c,i){
-        c.style.transform = 'rotate('+(i*stepDeg)+'deg) translateY('+(-R)+'px) translate(-50%,-50%)';
-      });
+      wcards.forEach(function(c){ c.style.left='50%'; c.style.top=cardY+'px'; });
       applyWheel();
     }
     wheelLayout();
