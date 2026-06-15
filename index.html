@@ -556,12 +556,16 @@ header.on-dark .burger span{background:var(--porcelain)}
 /* ============ TESTIMONIALS ============ */
 .voices{padding:clamp(96px,13vh,170px) 0 clamp(120px,16vh,200px)}
 .voices-inner{
-  background:var(--porcelain-deep);border-radius:26px;
+  background:var(--sage);color:var(--porcelain);border-radius:26px;
   padding:clamp(60px,8vw,110px) clamp(28px,6vw,110px);position:relative;overflow:hidden;
 }
-.voices .eyebrow{color:var(--sage);justify-content:center;margin-bottom:54px}
+.voices-inner::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 0%, rgba(245,243,242,.10), transparent 60%);
+}
+.voices .eyebrow{color:var(--sage-soft);justify-content:center;margin-bottom:54px;position:relative}
 .voices .eyebrow::before{display:none}
-.quote-stage{position:relative;min-height:260px;text-align:center;max-width:900px;margin-inline:auto}
+.quote-stage{position:relative;min-height:260px;text-align:center;max-width:900px;margin-inline:auto;z-index:1}
 .quote{position:absolute;inset:0;opacity:0;visibility:hidden}
 .quote.active{opacity:1;visibility:visible}
 .quote blockquote{
@@ -573,7 +577,8 @@ header.on-dark .burger span{background:var(--porcelain)}
 .q-stars{display:flex;justify-content:center;gap:6px;margin-bottom:30px}
 .q-stars svg{width:14px;fill:var(--gold)}
 .q-nav{display:flex;justify-content:center;gap:14px;margin-top:48px}
-.q-dot{width:34px;height:2px;background:var(--ink);opacity:.18;transition:opacity .3s;padding:10px 0;background-clip:content-box}
+.q-nav{position:relative;z-index:1}
+.q-dot{width:34px;height:2px;background:var(--porcelain);opacity:.25;transition:opacity .3s;padding:10px 0;background-clip:content-box}
 .q-dot.on{opacity:1}
 
 /* ============ VISIT / CTA ============ */
