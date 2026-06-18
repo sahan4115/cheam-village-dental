@@ -632,11 +632,11 @@ header.on-dark .burger span{background:var(--porcelain)}
 .q-dot.on{opacity:1}
 
 /* ============ VISIT / CTA ============ */
-.visit{background:var(--deep);color:var(--porcelain);padding:clamp(96px,13vh,170px) 0 clamp(96px,13vh,160px);overflow:hidden}
+.visit{background:var(--mist);color:var(--ink);padding:clamp(96px,13vh,170px) 0 clamp(96px,13vh,160px);overflow:hidden}
 .visit-head{max-width:780px;margin-bottom:clamp(44px,7vh,80px)}
 .visit-lead{max-width:540px;margin-top:28px;font-size:15px;line-height:1.9;opacity:.78}
 .visit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);align-items:stretch}
-.visit-map{position:relative;min-height:400px;border-radius:18px;overflow:hidden;border:1px solid var(--line-light);background:var(--ink-soft)}
+.visit-map{position:relative;min-height:400px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--porcelain-deep)}
 .visit-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.3) contrast(.95) brightness(.98)}
 .visit-map-pin{
   position:absolute;left:16px;bottom:16px;z-index:1;
@@ -646,15 +646,15 @@ header.on-dark .burger span{background:var(--porcelain)}
 }
 .visit-map-pin:hover{transform:translateY(-2px)}
 .visit .eyebrow{color:var(--sage-soft);margin-bottom:34px}
-.visit h2{font-size:clamp(30px,4vw,56px);color:var(--porcelain);margin-bottom:clamp(34px,5vh,58px)}
-.visit h2 em{color:var(--sage-soft)}
+.visit h2{font-size:clamp(30px,4vw,56px);color:var(--ink);margin-bottom:clamp(34px,5vh,58px)}
+.visit h2 em{color:var(--ink)}
 .visit-cta-row{display:flex;align-items:center;gap:28px;margin-top:50px;flex-wrap:wrap}
 .btn-pill.light{background:var(--porcelain);color:var(--ink)}
 .btn-pill.light:hover{color:var(--porcelain)}
 .visit-info{display:flex;flex-direction:column;gap:0}
-.info-block{padding:26px 0;border-bottom:1px solid var(--line-light)}
+.info-block{padding:26px 0;border-bottom:1px solid var(--line)}
 .info-block:first-child{padding-top:6px}
-.info-block h4{font-size:11px;letter-spacing:.08em;text-transform:none;color:var(--sage-soft);margin-bottom:14px;font-weight:600}
+.info-block h4{font-size:11px;letter-spacing:.08em;text-transform:none;color:var(--sage);margin-bottom:14px;font-weight:600}
 .info-block p,.info-block a{font-size:15px;line-height:1.9;opacity:.88}
 .info-block a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .hours{display:grid;grid-template-columns:auto 1fr;gap:6px 28px;font-size:14px}
@@ -663,20 +663,20 @@ header.on-dark .burger span{background:var(--porcelain)}
 
 /* ============ BOOK / CTA BAND ============ */
 .cta-band{
-  background:var(--forest-deep);color:var(--porcelain);
+  background:var(--deep);color:var(--porcelain);
   padding:clamp(54px,8vh,90px) 0;text-align:center;position:relative;overflow:hidden;
 }
 .cta-inner{display:flex;flex-direction:column;align-items:center}
 .cta-mark{width:38px;height:auto;stroke:var(--porcelain);fill:none;opacity:.85;margin-bottom:clamp(14px,2.2vh,20px)}
 .cta-title{font-size:clamp(36px,4.6vw,68px);letter-spacing:-.03em}
 .cta-title em{color:var(--sage-soft)}
-.cta-lead{max-width:44ch;margin:clamp(13px,1.9vh,18px) auto 0;font-size:clamp(14px,1.05vw,15.5px);line-height:1.75;opacity:.82}
+.cta-lead{max-width:72ch;margin:clamp(13px,1.9vh,18px) auto 0;font-size:clamp(14px,1.05vw,15.5px);line-height:1.75;opacity:.82;text-wrap:balance}
 .cta-actions{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:clamp(24px,3.4vh,36px);flex-wrap:wrap}
 
 /* footer */
 footer{border-top:1px solid var(--line-light);background:var(--deep-ground);color:var(--porcelain)}
 .foot-brand{display:flex;align-items:center;gap:16px}
-.foot-brand svg{width:36px;stroke:var(--porcelain)}
+.foot-brand .foot-logo{width:min(340px,74vw);height:auto}
 .foot-brand .brand-name{font-weight:500}
 .foot-top{
   display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
@@ -767,6 +767,7 @@ footer{border-top:1px solid var(--line-light);background:var(--deep-ground);colo
       <path d="M16 23 C22 38, 27.5 50, 31.4 62.5" stroke-width="2.4" stroke-linecap="round"/>
       <path d="M48 23 C42 38, 36.5 50, 32.6 62.5" stroke-width="2.4" stroke-linecap="round"/>
     </g>
+    <g id="brandWordmark"><path d="M165.11 75.3506H165.87V82.8706H165.11V75.3506Z"/><path d="M0 54.4103C0 52.2003 1.6 50.5703 3.77 50.5703C4.82 50.5703 5.77 50.9403 6.4 51.6703L5.92 52.1803C5.33 51.5503 4.61 51.2803 3.79 51.2803C2.05 51.2803 0.75 52.6203 0.75 54.4103C0.75 56.2003 2.05 57.5403 3.79 57.5403C4.61 57.5403 5.33 57.2703 5.92 56.6303L6.4 57.1403C5.76 57.8703 4.82 58.2503 3.76 58.2503C1.6 58.2503 0 56.6203 0 54.4103Z"/><path d="M23.32 50.6299V58.1899H22.57V54.6999H18.07V58.1899H17.31V50.6299H18.07V53.9999H22.57V50.6299H23.32Z"/><path d="M40.03 57.4999V58.1899H34.94V50.6299H39.88V51.3199H35.71V54.0099H39.43V54.6899H35.71V57.4999H40.04H40.03Z"/><path d="M55.99 56.1699H51.98L51.12 58.1899H50.33L53.62 50.6299H54.37L57.66 58.1899H56.86L56 56.1699H55.99ZM55.71 55.5299L53.98 51.4699L52.25 55.5299H55.7H55.71Z"/><path d="M75.71 50.6299V58.1899H74.98V52.1399L72.15 57.2299H71.79L68.96 52.1799V58.1999H68.23V50.6399H68.86L71.99 56.2499L75.08 50.6399H75.71V50.6299Z"/><path d="M105.26 50.6299L102.07 58.1899H101.32L98.13 50.6299H98.95L101.71 57.1999L104.49 50.6299H105.26Z"/><path d="M115.85 50.6299H116.61V58.1899H115.85V50.6299Z"/><path d="M128.22 50.6299H128.98V57.4999H133.01V58.1899H128.22V50.6299Z"/><path d="M143.63 50.6299H144.39V57.4999H148.42V58.1899H143.63V50.6299Z"/><path d="M164.09 56.1699H160.08L159.22 58.1899H158.43L161.72 50.6299H162.47L165.76 58.1899H164.96L164.1 56.1699H164.09ZM163.81 55.5299L162.08 51.4699L160.35 55.5299H163.8H163.81Z"/><path d="M181.17 54.4103H181.9V57.2903C181.22 57.9303 180.25 58.2503 179.26 58.2503C177.07 58.2503 175.47 56.6203 175.47 54.4103C175.47 52.2003 177.07 50.5703 179.27 50.5703C180.36 50.5703 181.31 50.9403 181.94 51.6603L181.47 52.1703C180.86 51.5403 180.14 51.2903 179.3 51.2903C177.52 51.2903 176.21 52.6203 176.21 54.4203C176.21 56.2203 177.52 57.5503 179.29 57.5503C179.98 57.5503 180.62 57.3903 181.17 56.9703V54.4203V54.4103Z"/><path d="M198.43 57.4999V58.1899H193.34V50.6299H198.28V51.3199H194.11V54.0099H197.83V54.6899H194.11V57.4999H198.44H198.43Z"/><path d="M0.539978 75.3506H3.45998C5.74998 75.3506 7.28998 76.9006 7.28998 79.1106C7.28998 81.3206 5.74998 82.8706 3.45998 82.8706H0.539978V75.3506ZM3.41998 82.1906C5.31998 82.1906 6.54998 80.9206 6.54998 79.1206C6.54998 77.3206 5.31998 76.0506 3.41998 76.0506H1.29998V82.2006H3.41998V82.1906Z"/><path d="M22.36 82.1904V82.8803H17.3V75.3604H22.21V76.0504H18.06V78.7204H21.76V79.4004H18.06V82.1904H22.37H22.36Z"/><path d="M38.16 75.3506V82.8706H37.54L32.94 76.7706V82.8706H32.18V75.3506H32.8L37.41 81.4506V75.3506H38.16Z"/><path d="M50.19 76.0406H47.67V75.3506H53.46V76.0406H50.94V82.8706H50.18V76.0406H50.19Z"/><path d="M66.81 80.8606H62.82L61.96 82.8706H61.17L64.44 75.3506H65.19L68.46 82.8706H67.66L66.8 80.8606H66.81ZM66.54 80.2206L64.82 76.1806L63.1 80.2206H66.54Z"/><path d="M77.98 75.3506H78.74V82.1806H82.75V82.8706H77.98V75.3506Z"/><path d="M102.37 81.96L102.67 81.35C103.18 81.88 104.09 82.26 105.03 82.26C106.37 82.26 106.95 81.67 106.95 80.93C106.95 78.87 102.54 80.13 102.54 77.35C102.54 76.24 103.36 75.29 105.18 75.29C105.99 75.29 106.83 75.54 107.4 75.95L107.14 76.59C106.53 76.17 105.81 75.97 105.18 75.97C103.87 75.97 103.29 76.58 103.29 77.33C103.29 79.39 107.7 78.15 107.7 80.89C107.7 82 106.86 82.94 105.03 82.94C103.96 82.94 102.9 82.54 102.37 81.96Z"/><path d="M119.22 76.0406H116.7V75.3506H122.49V76.0406H119.97V82.8706H119.21V76.0406H119.22Z"/><path d="M131.97 79.6606V75.3506H132.73V79.6206C132.73 81.4006 133.53 82.2206 134.92 82.2206C136.31 82.2206 137.12 81.4006 137.12 79.6206V75.3506H137.86V79.6606C137.86 81.8206 136.76 82.9306 134.92 82.9306C133.08 82.9306 131.97 81.8106 131.97 79.6606Z"/><path d="M148.35 75.3506H151.27C153.56 75.3506 155.1 76.9006 155.1 79.1106C155.1 81.3206 153.56 82.8706 151.27 82.8706H148.35V75.3506ZM151.22 82.1906C153.12 82.1906 154.35 80.9206 154.35 79.1206C154.35 77.3206 153.12 76.0506 151.22 76.0506H149.1V82.2006H151.22V82.1906Z"/><path d="M175.86 79.11C175.86 76.92 177.46 75.29 179.62 75.29C181.78 75.29 183.37 76.91 183.37 79.11C183.37 81.31 181.76 82.93 179.62 82.93C177.48 82.93 175.86 81.3 175.86 79.11ZM182.62 79.11C182.62 77.32 181.34 76 179.62 76C177.9 76 176.6 77.32 176.6 79.11C176.6 80.9 177.89 82.22 179.62 82.22C181.35 82.22 182.62 80.9 182.62 79.11Z"/><path d="M192.7 81.96L193 81.35C193.51 81.88 194.42 82.26 195.36 82.26C196.7 82.26 197.28 81.67 197.28 80.93C197.28 78.87 192.87 80.13 192.87 77.35C192.87 76.24 193.69 75.29 195.51 75.29C196.32 75.29 197.16 75.54 197.73 75.95L197.47 76.59C196.86 76.17 196.14 75.97 195.51 75.97C194.2 75.97 193.62 76.58 193.62 77.33C193.62 79.39 198.03 78.15 198.03 80.89C198.03 82 197.19 82.94 195.36 82.94C194.29 82.94 193.23 82.54 192.7 81.96Z"/></g>
   </defs>
 </svg>
 
@@ -806,35 +807,7 @@ footer{border-top:1px solid var(--line-light);background:var(--deep-ground);colo
 <header id="siteHeader">
   <div class="wrap nav">
     <a href="#top" class="brand" aria-label="Cheam Village Dental Studios, home">
-      <svg class="brand-logo" viewBox="-2 48 203 37" fill="currentColor" role="img" aria-label="Cheam Village Dental Studios"><g>
-        <path d="M165.11,75.35h.76v7.52h-.76v-7.52Z"/>
-        <g>
-          <path d="M0,54.41c0-2.21,1.6-3.84,3.77-3.84,1.05,0,2,.37,2.63,1.1l-.48.51c-.59-.63-1.31-.9-2.13-.9-1.74,0-3.04,1.34-3.04,3.13s1.3,3.13,3.04,3.13c.82,0,1.54-.27,2.13-.91l.48.51c-.64.73-1.58,1.11-2.64,1.11-2.16,0-3.76-1.63-3.76-3.84Z"/>
-          <path d="M23.32,50.63v7.56h-.75v-3.49h-4.5v3.49h-.76v-7.56h.76v3.37h4.5v-3.37h.75Z"/>
-          <path d="M40.03,57.5v.69h-5.09v-7.56h4.94v.69h-4.17v2.69h3.72v.68h-3.72v2.81h4.33Z"/>
-          <path d="M55.99,56.17h-4.01l-.86,2.02h-.79l3.29-7.56h.75l3.29,7.56h-.8l-.86-2.02ZM55.71,55.53l-1.73-4.06-1.73,4.06h3.45Z"/>
-          <path d="M75.71,50.63v7.56h-.73v-6.05l-2.83,5.09h-.36l-2.83-5.05v6.02h-.73v-7.56h.63l3.13,5.61,3.09-5.61h.63Z"/>
-          <path d="M105.26,50.63l-3.19,7.56h-.75l-3.19-7.56h.82l2.76,6.57,2.78-6.57h.77Z"/>
-          <path d="M115.85,50.63h.76v7.56h-.76v-7.56Z"/>
-          <path d="M128.22,50.63h.76v6.87h4.03v.69h-4.79v-7.56Z"/>
-          <path d="M143.63,50.63h.76v6.87h4.03v.69h-4.79v-7.56Z"/>
-          <path d="M164.09,56.17h-4.01l-.86,2.02h-.79l3.29-7.56h.75l3.29,7.56h-.8l-.86-2.02ZM163.81,55.53l-1.73-4.06-1.73,4.06h3.45Z"/>
-          <path d="M181.17,54.41h.73v2.88c-.68.64-1.65.96-2.64.96-2.19,0-3.79-1.63-3.79-3.84s1.6-3.84,3.8-3.84c1.09,0,2.04.37,2.67,1.09l-.47.51c-.61-.63-1.33-.88-2.17-.88-1.78,0-3.09,1.33-3.09,3.13s1.31,3.13,3.08,3.13c.69,0,1.33-.16,1.88-.58v-2.55Z"/>
-          <path d="M198.43,57.5v.69h-5.09v-7.56h4.94v.69h-4.17v2.69h3.72v.68h-3.72v2.81h4.33Z"/>
-          <path d="M.54,75.35h2.92c2.29,0,3.83,1.55,3.83,3.76s-1.54,3.76-3.83,3.76H.54v-7.52ZM3.42,82.19c1.9,0,3.13-1.27,3.13-3.07s-1.23-3.07-3.13-3.07H1.3v6.15h2.12Z"/>
-          <path d="M22.36,82.19v.69h-5.06v-7.52h4.91v.69h-4.15v2.67h3.7v.68h-3.7v2.79h4.31Z"/>
-          <path d="M38.16,75.35v7.52h-.62l-4.6-6.1v6.1h-.76v-7.52h.62l4.61,6.1v-6.1h.75Z"/>
-          <path d="M50.19,76.04h-2.52v-.69h5.79v.69h-2.52v6.83h-.76v-6.83Z"/>
-          <path d="M66.81,80.86h-3.99l-.86,2.01h-.79l3.27-7.52h.75l3.27,7.52h-.8l-.86-2.01ZM66.54,80.22l-1.72-4.04-1.72,4.04h3.44Z"/>
-          <path d="M77.98,75.35h.76v6.83h4.01v.69h-4.77v-7.52Z"/>
-          <path d="M102.37,81.96l.3-.61c.51.53,1.42.91,2.36.91,1.34,0,1.92-.59,1.92-1.33,0-2.06-4.41-.8-4.41-3.58,0-1.11.82-2.06,2.64-2.06.81,0,1.65.25,2.22.66l-.26.64c-.61-.42-1.33-.62-1.96-.62-1.31,0-1.89.61-1.89,1.36,0,2.06,4.41.82,4.41,3.56,0,1.11-.84,2.05-2.67,2.05-1.07,0-2.13-.4-2.66-.98Z"/>
-          <path d="M119.22,76.04h-2.52v-.69h5.79v.69h-2.52v6.83h-.76v-6.83Z"/>
-          <path d="M131.97,79.66v-4.31h.76v4.27c0,1.78.8,2.6,2.19,2.6s2.2-.82,2.2-2.6v-4.27h.74v4.31c0,2.16-1.1,3.27-2.94,3.27s-2.95-1.12-2.95-3.27Z"/>
-          <path d="M148.35,75.35h2.92c2.29,0,3.83,1.55,3.83,3.76s-1.54,3.76-3.83,3.76h-2.92v-7.52ZM151.22,82.19c1.9,0,3.13-1.27,3.13-3.07s-1.23-3.07-3.13-3.07h-2.12v6.15h2.12Z"/>
-          <path d="M175.86,79.11c0-2.19,1.6-3.82,3.76-3.82s3.75,1.62,3.75,3.82-1.61,3.82-3.75,3.82-3.76-1.63-3.76-3.82ZM182.62,79.11c0-1.79-1.28-3.11-3-3.11s-3.02,1.32-3.02,3.11,1.29,3.11,3.02,3.11,3-1.32,3-3.11Z"/>
-          <path d="M192.7,81.96l.3-.61c.51.53,1.42.91,2.36.91,1.34,0,1.92-.59,1.92-1.33,0-2.06-4.41-.8-4.41-3.58,0-1.11.82-2.06,2.64-2.06.81,0,1.65.25,2.22.66l-.26.64c-.61-.42-1.33-.62-1.96-.62-1.31,0-1.89.61-1.89,1.36,0,2.06,4.41.82,4.41,3.56,0,1.11-.84,2.05-2.67,2.05-1.07,0-2.13-.4-2.66-.98Z"/>
-        </g>
-      </g></svg>
+      <svg class="brand-logo" viewBox="-2 48 203 37" fill="currentColor" role="img" aria-label="Cheam Village Dental Studios"><use href="#brandWordmark"/></svg>
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#studio">Studio</a>
@@ -972,7 +945,7 @@ footer{border-top:1px solid var(--line-light);background:var(--deep-ground);colo
         </div>
       </div>
       <div class="intro-right">
-        <h2 class="h-display" data-lines>Cheam Village is run by <span class="accent">Dr Krishan &amp; Dr Kaajal Patel</span>, a husband-and-wife team who built the kind of practice they'd want for their own family.</h2>
+        <h2 class="h-display" data-lines>Cheam Village is run by <span class="accent">Dr Krishan &amp; Dr Kaajal Patel</span>, a husband and wife team who built the kind of practice they'd want for their own family.</h2>
         <div class="intro-cols" data-fade>
           <p><strong>One small team, looking after yours.</strong> You'll see the same familiar faces each visit, with unhurried appointments and treatment explained in plain, everyday language, never jargon.</p>
           <p>From children's first check-ups to teeth straightening and complete smile makeovers, the whole family is welcome, and looked after with the same care, year after year.</p>
@@ -1213,8 +1186,36 @@ footer{border-top:1px solid var(--line-light);background:var(--deep-ground);colo
       <div class="wrap">
         <div class="foot-top">
           <div class="foot-brand">
-            <svg viewBox="0 0 64 80"><use href="#toothMark"/></svg>
-            <span class="brand-name">Cheam Village<small>Dental Studios</small></span>
+            <svg class="foot-logo" viewBox="0 0 396.85 32.34" fill="#fff" role="img" aria-label="Cheam Village Dental Studios"><g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path d="M0,16.17c0-1.83,1.39-3.18,3.28-3.18.91,0,1.73.3,2.29.91l-.42.42c-.51-.52-1.13-.74-1.85-.74-1.51,0-2.64,1.11-2.64,2.59s1.13,2.59,2.64,2.59c.72,0,1.34-.22,1.85-.75l.42.42c-.55.61-1.38.92-2.3.92-1.88,0-3.27-1.35-3.27-3.18Z"/>
+      <path d="M19.17,13.04v6.25h-.65v-2.89h-3.91v2.89h-.66v-6.25h.66v2.79h3.91v-2.79h.65Z"/>
+      <path d="M32.61,18.73v.57h-4.42v-6.25h4.29v.57h-3.63v2.22h3.23v.56h-3.23v2.32h3.76Z"/>
+      <path d="M45.4,17.63h-3.48l-.75,1.67h-.69l2.86-6.25h.65l2.86,6.25h-.7l-.75-1.67ZM45.16,17.09l-1.5-3.36-1.5,3.36h3Z"/>
+      <path d="M61.46,13.04v6.25h-.63v-5l-2.46,4.21h-.31l-2.46-4.18v4.98h-.63v-6.25h.55l2.72,4.64,2.69-4.64h.54Z"/>
+      <path d="M85.34,13.04l-2.77,6.25h-.65l-2.77-6.25h.72l2.39,5.43,2.41-5.43h.67Z"/>
+      <path d="M93.45,13.04h.66v6.25h-.66v-6.25Z"/>
+      <path d="M103.11,13.04h.66v5.68h3.5v.57h-4.16v-6.25Z"/>
+      <path d="M115.42,13.04h.66v5.68h3.5v.57h-4.16v-6.25Z"/>
+      <path d="M132.15,17.63h-3.49l-.75,1.67h-.69l2.86-6.25h.65l2.86,6.25h-.7l-.75-1.67ZM131.91,17.09l-1.5-3.36-1.5,3.36h3Z"/>
+      <path d="M145.9,16.17h.63v2.39c-.59.53-1.43.8-2.3.8-1.9,0-3.3-1.35-3.3-3.18s1.39-3.18,3.31-3.18c.95,0,1.77.3,2.32.9l-.41.42c-.53-.52-1.15-.73-1.88-.73-1.55,0-2.68,1.1-2.68,2.59s1.13,2.59,2.67,2.59c.6,0,1.15-.13,1.64-.48v-2.11Z"/>
+      <path d="M159.8,18.73v.57h-4.42v-6.25h4.29v.57h-3.63v2.22h3.23v.56h-3.23v2.32h3.76Z"/>
+      <path d="M226.47,13.04h2.55c2,0,3.35,1.29,3.35,3.13s-1.35,3.13-3.35,3.13h-2.55v-6.25ZM228.98,18.73c1.66,0,2.73-1.05,2.73-2.56s-1.07-2.56-2.73-2.56h-1.85v5.11h1.85Z"/>
+      <path d="M245.33,18.73v.57h-4.42v-6.25h4.29v.57h-3.63v2.22h3.23v.56h-3.23v2.32h3.76Z"/>
+      <path d="M258.93,13.04v6.25h-.55l-4.02-5.08v5.08h-.66v-6.25h.55l4.03,5.07v-5.07h.65Z"/>
+      <path d="M269.25,13.61h-2.2v-.57h5.06v.57h-2.2v5.68h-.66v-5.68Z"/>
+      <path d="M283.54,17.63h-3.49l-.75,1.67h-.69l2.86-6.25h.65l2.86,6.25h-.7l-.75-1.67ZM283.3,17.09l-1.5-3.36-1.5,3.36h3Z"/>
+      <path d="M293.1,13.04h.66v5.68h3.5v.57h-4.16v-6.25Z"/>
+      <path d="M314.41,18.54l.26-.51c.45.44,1.24.76,2.06.76,1.17,0,1.68-.49,1.68-1.11,0-1.72-3.85-.66-3.85-2.98,0-.92.72-1.72,2.31-1.72.71,0,1.44.21,1.94.55l-.22.53c-.54-.35-1.16-.52-1.72-.52-1.14,0-1.65.51-1.65,1.13,0,1.72,3.85.68,3.85,2.96,0,.92-.73,1.71-2.33,1.71-.94,0-1.86-.33-2.32-.81Z"/>
+      <path d="M328.95,13.61h-2.2v-.57h5.06v.57h-2.2v5.68h-.66v-5.68Z"/>
+      <path d="M339.9,16.63v-3.58h.66v3.56c0,1.48.7,2.16,1.91,2.16s1.92-.68,1.92-2.16v-3.56h.64v3.58c0,1.8-.96,2.72-2.56,2.72s-2.57-.93-2.57-2.72Z"/>
+      <path d="M354.01,13.04h2.55c2,0,3.35,1.29,3.35,3.13s-1.35,3.13-3.35,3.13h-2.55v-6.25ZM356.52,18.73c1.66,0,2.73-1.05,2.73-2.56s-1.07-2.56-2.73-2.56h-1.85v5.11h1.85Z"/>
+      <path d="M368.47,13.04h.66v6.25h-.66v-6.25Z"/>
+      <path d="M377.67,16.17c0-1.82,1.39-3.18,3.29-3.18s3.28,1.35,3.28,3.18-1.4,3.18-3.28,3.18-3.29-1.36-3.29-3.18ZM383.58,16.17c0-1.49-1.12-2.59-2.62-2.59s-2.64,1.1-2.64,2.59,1.13,2.59,2.64,2.59,2.62-1.1,2.62-2.59Z"/>
+      <path d="M392.19,18.54l.26-.51c.45.44,1.24.76,2.06.76,1.17,0,1.68-.49,1.68-1.11,0-1.72-3.85-.66-3.85-2.98,0-.92.72-1.72,2.31-1.72.71,0,1.44.21,1.94.55l-.22.53c-.54-.35-1.16-.52-1.72-.52-1.14,0-1.65.51-1.65,1.13,0,1.72,3.85.68,3.85,2.96,0,.92-.73,1.71-2.33,1.71-.94,0-1.86-.33-2.32-.81Z"/>
+    </g>
+    <path d="M204.68,4.58c-2.26-4.27-7.11-5.75-11.51-3.6-4.4-2.15-9.25-.67-11.51,3.6-1.65,3.12-1.29,6.54.68,9.12l4.59,18.34,1.79.31,4.45-6.67,4.45,6.67,1.79-.31,4.59-18.34c1.97-2.57,2.34-6,.68-9.12ZM183.21,5.4c1.65-3.11,5.02-4.42,8.26-3.39-1.46,1.11-2.5,2.54-2.93,4.21l1.53.47c.51-1.76,1.58-3.01,3.09-3.91,1.5.89,2.58,2.15,3.09,3.91l1.53-.47c-.43-1.66-1.47-3.1-2.93-4.21,3.24-1.03,6.62.28,8.26,3.39,1.87,3.54.57,7.61-3.04,9.52-1.7.9-3.48,1.16-5.35.57l-.47,1.53c.72.26,1.47.38,2.23.4l-3.33,5.01-3.33-5.01c.76-.02,1.51-.14,2.23-.4l-.47-1.53c-1.87.59-3.64.34-5.35-.57-3.6-1.91-4.91-5.98-3.04-9.52ZM188.18,29.93l-3.55-14.12c.27.17.54.34.83.49.65.34,1.31.6,1.98.79l4.64,6.96-3.91,5.88ZM198.16,29.93l-3.91-5.88,4.64-6.96c.67-.19,1.33-.45,1.98-.79.29-.15.57-.32.83-.49l-3.55,14.12Z"/>
+  </g></svg>
           </div>
           <div class="foot-actions">
             <a class="foot-phone" href="tel:+442086420000">020 8642 0000</a>
